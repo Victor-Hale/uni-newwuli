@@ -65,7 +65,7 @@ Route::get("export","TeacherShowController@export");//pdf
  * 电表改装实验
  */
 Route::prefix('dianbiao')->group(function () {
-    Route::post("luru","Shiyan\DiangaiController@WzhDiangai")
+    Route::post("luru","Shiyan\D    iangaiController@WzhDiangai")
         ->middleware('jwt.auth');//电表改装实验成绩录入
     Route::get("dianbiaopdf","Shiyan\DiangaiController@pdf");//pdf导出
 });
