@@ -10,7 +10,16 @@ use Mpdf;
 
 class PhysicsController extends Controller
 {
-    public function YJXphysics (Request $request)
+
+    /**
+     * @param \App\Http\Requests\Physics $request
+     * @return \Illuminate\Http\JsonResponse
+     * 将大学物理实验一入库
+     * @author
+     *  yjx
+     *
+     */
+    public function YJXphysics (\App\Http\Requests\Physics $request)
     {
          $student_id = auth('api')->user()->student_id;
          //dd($student_id);
@@ -68,7 +77,7 @@ class PhysicsController extends Controller
         );
 //dd(6657);
 
-        //表入库变为1
+        //表入库变为2
         $resruku = Physics::ruku($student_id);
 
 
@@ -141,7 +150,7 @@ class PhysicsController extends Controller
 
         $tianfen = Physics::tianfen($student_id,$grade,$grade_xp);
 //dd($grade);
-        //表入库变为2
+        //表入库变为3
         $resruku2 = Physics::ruku2($student_id);
 //dd(6657);
         //批改状态变为1（该实验无需批改）
@@ -156,6 +165,11 @@ class PhysicsController extends Controller
 
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     * 查询入学层次
+     * yjx
+     */
     public function yjxshowxxlevel()
     {
         //$level = $request['level'];
@@ -166,6 +180,13 @@ class PhysicsController extends Controller
             json_fail('查询失败',null, 100 ) ;
 
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * 查询所有班级（在一个专业里）
+     * yjx
+     */
     public function yjxshowxxclass(Request $request)
     {
 
@@ -178,6 +199,12 @@ class PhysicsController extends Controller
             json_fail('查询失败',null, 100 ) ;
 
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     * 查询所有专业
+     * yjx
+     */
     public function yjxshowxxspec()
     {
 
@@ -188,6 +215,12 @@ class PhysicsController extends Controller
             json_fail('查询失败',null, 100 ) ;
 
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     * 查询所有年级
+     * yjx
+     */
     public function yjxshowxxyear()
     {
 
