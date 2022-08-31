@@ -13,6 +13,33 @@ class Physics extends Model
     protected $primaryKey = "id";
     protected $guarded = [];
 
+    /**
+     * @param $student_id
+     * @param $pd1
+     * @param $pd2
+     * @param $pd3
+     * @param $pd4
+     * @param $pd5
+     * @param $pd6
+     * @param $pd7
+     * @param $pd8
+     * @param $xz1
+     * @param $xz2
+     * @param $xz3
+     * @param $xz4
+     * @param $xz5
+     * @param $xz6
+     * @param $xz7
+     * @param $xz8
+     * @param $xz9
+     * @param $xz10
+     * @param $xz11
+     * @param $xz12
+     * @return false
+     * 创建大物一的数据
+     * @author  yjx
+     *
+     */
     public static function establish(
         $student_id,
         $pd1,
@@ -63,8 +90,8 @@ class Physics extends Model
                         'xz12' => $xz12,
 
                         'student_id' => $student_id,
-                        'state' => 0,
-                        'poste' => 0,
+                        'state' => 1,
+                        'poste' => 1,
                     ]
 
                 );
@@ -79,6 +106,12 @@ class Physics extends Model
             }
 
 
+    /**
+     * @param $student_id
+     * @return false
+     * 通过学生id查询大物一数据
+     * @author yjx
+     */
     public static function YJXshow($student_id)
     {
         try {
@@ -230,7 +263,7 @@ class Physics extends Model
     public static function ruku($student_id)
     {
         try {
-            $res = self::where('student_id',$student_id)->update(['state' => 1]);
+            $res = self::where('student_id',$student_id)->update(['state' => 2]);
 
             return $res ?
                 $res :
@@ -244,7 +277,7 @@ class Physics extends Model
     public static function ruku2($student_id)
     {
         try {
-            $res = self::where('student_id',$student_id)->update(['state' => 2]);
+            $res = self::where('student_id',$student_id)->update(['state' => 3]);
 //dd(22);
             return $res ?
                 $res :

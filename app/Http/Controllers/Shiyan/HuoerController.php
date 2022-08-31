@@ -829,7 +829,7 @@ public function pdf(Request $request)
 
 
 
-    $res = view('huoer', [
+    $res = view('HuoEr', [
         'student_name' => $student_name,
         'student_level' => $student_level,
         'student_spec' => $student_spec,

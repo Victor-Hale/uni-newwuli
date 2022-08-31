@@ -46,7 +46,6 @@ Route::prefix('show')->group(function () {
     Route::get('showyear', 'PhysicsController@yjxshowxxyear');  //查看级数下拉款
     Route::post('showclass', 'PhysicsController@yjxshowxxclass');  //查看班级下拉框
     Route::get('showspec', 'PhysicsController@yjxshowxxspec');  //查看专业下拉框
-
     Route::post('showxxallin', 'TeacherShowController@yjxshowxxallin');  //教师端3连查询
     Route::get('pdf1', 'PhysicsController@pdf1');//实验1pdf
 });
@@ -77,7 +76,8 @@ Route::prefix('huoer')->group(function () {
     Route::post("luru","Shiyan\HuoerController@WzhHuoer")
         ->middleware('jwt.auth');//霍尔效应测量磁感应强度成绩录入
     Route::get("huoerpdf","Shiyan\HuoerController@pdf");//pdf导出
-    Route::post("DaFen","Shiyan\HuoerController@DaFen");//打分
+    Route::post("DaFen","Shiyan\HuoerController@DaFen")
+        ->middleware('jwt.auth');                       //打分
 });
 
 /**
@@ -118,12 +118,12 @@ Route::prefix('xiangshi')->group(function () {
 });
 
 /**
- * 箱式直流电桥测量电阻
+ * 自组直流电桥测量电阻
  */
 Route::prefix('zizu')->group(function () {
     Route::post("luru","Shiyan\ZizuController@WzhZizu")
         ->middleware('jwt.auth');//箱式直流电桥测量电阻录入
-    Route::get("xiangshipdf","Shiyan\ZizuController@pdf");//pdf导出
+    Route::get("zizupdf","Shiyan\ZizuController@pdf");//pdf导出
 });
 
 
