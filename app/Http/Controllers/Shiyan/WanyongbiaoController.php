@@ -16,57 +16,51 @@ class WanyongbiaoController extends Controller
      */
     public function WzhWanyongbiao(Request $request){
         $student_id=auth('api')->user()->student_id;
-        $one_ig = $request['one_ig'];
-        $one_rg = $request['one_rg'];
+
+        $one_ig = sprintf("%.1f",$request['one_ig']);
+        $one_rg = sprintf("%.1f",$request['one_rg']);
         $one_e = sprintf("%.1f",$request['one_e']);
 
         $two_one_rg = sprintf("%.1f",$request['two_one_rg']);
         $two_one_ig = sprintf("%.1f",$request['two_one_ig']);
         $two_one_im = sprintf("%.1f",$request['two_one_im']);
-
-
         $two_one_r1 = sprintf("%.1f",$request['two_one_r1']);
-        $two_two_rn = sprintf("%.1f",$request['two_two_rn']);
-        $two_two_im = sprintf("%.1f",$request['two_two_im']);
+        $two_one_lx = sprintf("%.1f",$request['two_one_lx']);
+        $two_one_rn = sprintf("%.1f",$request['two_one_rn']);
+        $two_one_im2 = sprintf("%.1f",$request['two_one_im2']);
 
         $two_two_vm = sprintf("%.1f",$request['two_two_vm']);
-        $two_two_im2 = sprintf("%.1f",$request['two_two_im2']);
-        $two_two_rn2 = sprintf("%.1f",$request['two_two_rn2']);
+        $two_two_im = sprintf("%.2f",$request['two_two_im']);
+        $two_two_rn = sprintf("%.1f",$request['two_two_rn']);
         $two_two_r2 = sprintf("%.1f",$request['two_two_r2']);
+        $two_two_vx = sprintf("%.1f",$request['two_two_vx']);
 
         $two_thr_e = sprintf("%.1f",$request['two_thr_e']);
-        $two_thr_im2 = sprintf("%.1f",$request['two_thr_im2']);
+        $two_thr_im = sprintf("%.2f",$request['two_thr_im']);
         $two_thr_rn = sprintf("%.1f",$request['two_thr_rn']);
-        $two_thr_r42 = sprintf("%.1f",$request['two_thr_r42']);
+        $two_thr_r3 = sprintf("%.1f",$request['two_thr_r3']);
+
+
+
         $two_four_e = sprintf("%.1f",$request['two_four_e']);
+        $two_four_i3 = sprintf("%.3f",$request['two_four_i3']);
+        $two_four_rx = sprintf("%.1f",$request['two_four_rx']);
+        $two_four_r3rn = sprintf("%.1f",$request['two_four_r3rn']);
         $two_four_r4 = sprintf("%.1f",$request['two_four_r4']);
-        $two_four_rn4 = sprintf("%.1f",$request['two_four_rn4']);
-        $two_four_r3 = sprintf("%.1f",$request['two_four_r3']);
+        $two_four_rx2 = sprintf("%.1f",$request['two_four_rx2']);
 
 
-        $thr_one_r1 = sprintf("%f",$request['thr_one_r1']);
-        $thr_one_ix = sprintf("%.2f",$request['thr_one_ix']);
-        $thr_one_ds = sprintf("%f",$request['thr_one_ds']);
-        $thr_two_r2 = sprintf("%f",$request['thr_two_r2']);
-        $thr_two_vx = sprintf("%.2f",$request['thr_two_vx']);
-        $thr_two_ds = sprintf("%f",$request['thr_two_ds']);
-        $thr_thr_r4 = sprintf("%f",$request['thr_thr_r4']);
-        $thr_thr_r3 = sprintf("%f",$request['thr_thr_r3']);
-        $thr_thr_rx = sprintf("%f",$request['thr_thr_rx']);
-        $thr_thr_ds = sprintf("%f",$request['thr_thr_ds']);
+        $thir_one_one = $request['thir_one_one'];
+        $thir_one_two = $request['thir_one_two'];
+        $thir_one_three = $request['thir_one_three'];
+        $thir_one_four = $request['thir_one_four'];
+        $thir_two_one = $request['thir_two_one'];
+        $thir_two_two = $request['thir_two_two'];
 
 
-        $four_one_r1 = sprintf("%f",$request['four_one_r1']);
-        $four_one_r2 = sprintf("%f",$request['four_one_r2']);
-        $four_one_r3 = sprintf("%f",$request['four_one_r3']);
-        $four_one_r4 = sprintf("%f",$request['four_one_r4']);
-        $four_one_ix = sprintf("%f",$request['four_one_ix']);
 
-        $four_two_1 = $request['four_two_1'];
-        $four_two_2 = $request['four_two_2'];
-        $four_two_3 = $request['four_two_3'];
-        $four_two_4 = $request['four_two_4'];
-        $four_two_5 = $request['four_two_5'];
+
+
 
         $res1 = Wanyongbiao::establish(
             $one_ig,
@@ -76,60 +70,52 @@ class WanyongbiaoController extends Controller
             $two_one_rg,
             $two_one_ig,
             $two_one_im,
-
             $two_one_r1,
-            $two_two_rn,
-            $two_two_im,
+            $two_one_lx,
+            $two_one_rn,
+            $two_one_im2,
 
             $two_two_vm,
-            $two_two_im2,
-            $two_two_rn2,
+            $two_two_im,
+            $two_two_rn,
             $two_two_r2,
+            $two_two_vx,
 
             $two_thr_e,
-            $two_thr_im2,
+            $two_thr_im,
             $two_thr_rn,
-            $two_thr_r42,
+            $two_thr_r3,
+
             $two_four_e,
+            $two_four_i3,
+            $two_four_rx,
+            $two_four_r3rn,
             $two_four_r4,
-            $two_four_rn4,
-            $two_four_r3,
-            $thr_one_r1,
-            $thr_one_ix,
-            $thr_one_ds,
-            $thr_two_r2,
-            $thr_two_vx,
-            $thr_two_ds,
-            $thr_thr_r4,
-            $thr_thr_r3,
-            $thr_thr_rx,
-            $thr_thr_ds,
-            $four_one_r1,
-            $four_one_r2,
-            $four_one_r3,
-            $four_one_r4,
-            $four_one_ix,
-            $four_two_1,
-            $four_two_2,
-            $four_two_3,
-            $four_two_4,
-            $four_two_5,
+            $two_four_rx2,
+
+            $thir_one_one,
+            $thir_one_two,
+            $thir_one_three,
+            $thir_one_four,
+            $thir_two_one,
+            $thir_two_two,
 
             $student_id
+
         );
 
         $grade = 0;
         $grade_xp = 0;
 
         Wanyongbiao::statechange($student_id);
-        if ($one_ig == 500.0) {
-            $grade += 2;
+        if ($one_ig ==0.5) {
+            $grade += 3;
         }
         if ($one_rg == 560.0) {
-            $grade += 2;
+            $grade += 3;
         }
         if ($one_e == 1.5) {
-            $grade += 2;
+            $grade += 3;
         }
 
         if ($two_one_rg == 560.0) {
@@ -145,123 +131,89 @@ class WanyongbiaoController extends Controller
         if ($two_one_r1 == 29.5) {
             $grade += 3;
         }
-        if ($two_two_rn == 28.0) {
+        if ($two_one_lx>= 1.0&&$two_one_lx<=9.0) {
             $grade += 3;
         }
-        if ($two_two_im == 10.0) {
+        if ($two_one_rn ==28.0) {
             $grade += 3;
         }
 
+        if ($two_one_im2 == 10) {
+            $grade += 3;
+        }
         if ($two_two_vm == 5.0) {
             $grade += 3;
         }
-        if ($two_two_im2 == 10.0) {
-            $grade += 3;
-        }
-        if ($two_two_rn2 == 28.0) {
+
+
+        if ($two_two_im == 0.01) {
             $grade += 3;
         }
 
+        if ($two_two_rn == 28) {
+            $grade += 3;
+        }
         if ($two_two_r2 == 472.0) {
             $grade += 3;
         }
-
+        if ($two_two_vx <= 4.5&&$two_two_vx>=1.0) {
+            $grade += 3;
+        }
         if ($two_thr_e == 1.5) {
             $grade += 3;
         }
-        if ($two_thr_im2 == 10.0) {
+
+        if ($two_thr_im == 0.01) {
             $grade += 3;
         }
         if ($two_thr_rn == 28.0) {
             $grade += 3;
         }
-        if ($two_thr_r42 == 122.0) {
+        if ($two_thr_r3 == 122.0) {
             $grade += 3;
         }
-
         if ($two_four_e == 1.5) {
             $grade += 3;
         }
-        if ($two_four_r4 == 122.0) {
+
+        if ($two_four_i3 == 0.003) {
             $grade += 3;
         }
-        if ($two_four_rn4 == 28.0) {
-            $grade += 3;
-        }
-        if ($two_four_r3 == 60.0) {
+        if ($two_four_rx == 100.0) {//
             $grade += 3;
         }
 
-        if ($thr_one_r1 == 29.5) {
+        if ($two_four_r3rn == 150.0) {
             $grade += 3;
         }
-        if ($thr_one_ix == $thr_one_ds / 10.0) {//
+        if ($two_four_r4 == 60.0) {
             $grade += 3;
         }
-
-        if ($thr_one_ds >= 20.0 && $thr_one_ds <= 80.0) {
-            $grade += 3;
-        }
-        if ($thr_two_r2 == 472.0) {
-            $grade += 3;
-        }
-        if ($thr_two_vx == $thr_two_ds / 20.0) {//
-            $grade += 3;
-        }
-        if ($thr_two_ds >= 20.0 && $thr_two_ds <= 80.0) {
-            $grade += 3;
-        }
-        if ($thr_thr_r4 >= 121.5 && $thr_thr_r4 <= 122.5) {
-            $grade += 3;
-        }
-        if ($thr_thr_r3 >= 60.0 && $thr_thr_r3 <= 63.0) {
-            $grade += 3;
-        }
-        if ($thr_thr_rx == $thr_thr_ds) {//
-            $grade += 3;
-        }
-        if ($thr_thr_ds >= 15.0 && $thr_thr_ds <= 250.0) {
+        if ($two_four_rx2 <=250.0&&$two_four_rx2>=50.0) {//
             $grade += 3;
         }
 
-
-        if ($four_one_r1 == 29.5) {
-            $grade += 1;
+        if ($thir_one_one == 'B') {
+            $grade_xp += 5;
         }
-        if ($four_one_r2 == 472.0) {
-            $grade += 1;
+        if ($thir_one_two =='C') {
+            $grade_xp += 5;
         }
-        if ($four_one_r3 == 61.0) {
-            $grade += 1;
+        if ($thir_one_three =='D') {//
+            $grade_xp += 5;
         }
-        if ($four_one_r4 == 122.1) {
-            $grade += 1;
-        }
-        if ($four_one_ix == 6.0) {
-            $grade += 1;
+        if ($thir_one_four =='A') {
+            $grade_xp += 5;
         }
 
 
-        if($four_two_1 == 0)
-        {
-            $grade_xp += 1;
+        if ($thir_two_one == 'T') {
+            $grade_xp += 2.5;
         }
-        if($four_two_2 == 1)
-        {
-            $grade_xp += 1;
+        if ($thir_two_two == 'T') {
+            $grade_xp += 2.5;
         }
-        if($four_two_3 == 0)
-        {
-            $grade_xp += 1;
-        }
-        if($four_two_4 == 1)
-        {
-            $grade_xp += 1;
-        }
-        if($four_two_5 == 0)
-        {
-            $grade_xp += 1;
-        }
+
 
 
         $grade = $grade + $grade_xp;
@@ -274,7 +226,7 @@ class WanyongbiaoController extends Controller
         $res['res1'] = $res1;
         $res['res2'] = $res2;
 
-        return $res ?
+        return $res1 ?
             json_success('操作成功!', $res1, 200) :
             json_fail('操作失败!', null, 100);
     }
@@ -294,61 +246,6 @@ class WanyongbiaoController extends Controller
 
         $student_b = json_decode($student_a);
 
-        $one_ig		 = $student_b[0]->one_ig;
-        $one_rg		 = $student_b[0]->one_rg;
-        $one_e		 = $student_b[0]->one_e;
-
-
-
-
-
-        $two_one_r1	 = $student_b[0]->two_one_r1;
-
-        $two_one_rg	 = $student_b[0]->two_one_rg;
-        $two_one_ig	 = $student_b[0]->two_one_ig;
-        $two_one_im	 = $student_b[0]->two_one_im;
-
-        $two_two_rn	 = $student_b[0]->two_two_rn;
-        $two_two_im	 = $student_b[0]->two_two_im;
-
-        $two_two_vm	 = $student_b[0]->two_two_vm;
-        $two_two_im2 = $student_b[0]->two_two_im2;
-        $two_two_rn2 = $student_b[0]->two_two_rn2;
-        $two_two_r2	 = $student_b[0]->two_two_r2;
-
-        $two_thr_e	 = $student_b[0]->two_thr_e	;
-        $two_thr_im2 = $student_b[0]->two_thr_im2;
-        $two_thr_rn	 = $student_b[0]->two_thr_rn;
-        $two_thr_r42 = $student_b[0]->two_thr_r42;
-        $two_four_e	 = $student_b[0]->two_four_e;
-        $two_four_r4 = $student_b[0]->two_four_r4;
-        $two_four_rn4 = $student_b[0]->two_four_rn4;
-        $two_four_r3 = $student_b[0]->two_four_r3;
-        $thr_one_r1	 = $student_b[0]->thr_one_r1;
-        $thr_one_ix	 = $student_b[0]->thr_one_ix;
-        $thr_one_ds	 = $student_b[0]->thr_one_ds;
-        $thr_two_r2	 = $student_b[0]->thr_two_r2;
-        $thr_two_vx	 = $student_b[0]->thr_two_vx;
-        $thr_two_ds	 = $student_b[0]->thr_two_ds;
-        $thr_thr_r4	 = $student_b[0]->thr_thr_r4;
-        $thr_thr_r3	 = $student_b[0]->thr_thr_r3;
-        $thr_thr_rx	 = $student_b[0]->thr_thr_rx;
-        $thr_thr_ds	 = $student_b[0]->thr_thr_ds;
-        $four_one_r1 = $student_b[0]->four_one_r1;
-        $four_one_r2 = $student_b[0]->four_one_r2;
-        $four_one_r3 = $student_b[0]->four_one_r3;
-        $four_one_r4 = $student_b[0]->four_one_r4;
-        $four_one_ix = $student_b[0]->four_one_ix;
-        $four_two_1	 = $student_b[0]->four_two_1;
-        $four_two_2	 = $student_b[0]->four_two_2;
-        $four_two_3	 = $student_b[0]->four_two_3;
-        $four_two_4	 = $student_b[0]->four_two_4;
-        $four_two_5	 = $student_b[0]->four_two_5;
-
-
-
-
-
         $student_name = $student_b[0]->student_name;
         $student_level = $student_b[0]->student_level;
         $student_spec = $student_b[0]->student_spec;
@@ -361,37 +258,47 @@ class WanyongbiaoController extends Controller
         $grade = $student_b[0]->grade;
         $grade_xp = $student_b[0]->grade_xp;
 
+        $one_ig		 = $student_b[0]->one_ig;
+        $one_rg		 = $student_b[0]->one_rg;
+        $one_e		 = $student_b[0]->one_e;
 
-        if($four_two_1 == 0)
-        {
-            $four_two_1='错';
-        }else{
-            $four_two_1='对';
-        }
-        if($four_two_2 == 0)
-        {
-            $four_two_2='错';
-        }else{
-            $four_two_2='对';
-        }
-        if($four_two_3== 0)
-        {
-            $four_two_3='错';
-        }else{
-            $four_two_3='对';
-        }
-        if($four_two_4 == 0)
-        {
-            $four_two_4='错';
-        }else{
-            $four_two_4='对';
-        }
-        if($four_two_5 == 0)
-        {
-            $four_two_5='错';
-        }else{
-            $four_two_5='对';
-        }
+        $two_one_rg	 = $student_b[0]->two_one_rg;
+        $two_one_ig	 = $student_b[0]->two_one_ig;
+        $two_one_im	 = $student_b[0]->two_one_im;
+        $two_one_r1	 = $student_b[0]->two_one_r1;
+        $two_one_lx	 = $student_b[0]->two_one_lx;
+        $two_one_rn = $student_b[0]->two_one_rn;
+        $two_one_im2 = $student_b[0]->two_one_im2;
+
+
+        $two_two_vm = $student_b[0]->two_two_vm;
+        $two_two_im = $student_b[0]->two_two_im;
+        $two_two_rn	 = $student_b[0]->two_two_rn;;
+        $two_two_r2 = $student_b[0]->two_two_r2;
+        $two_two_vx	 = $student_b[0]->two_two_vx;
+
+        $two_thr_e = $student_b[0]->two_thr_e;
+        $two_thr_im	 = $student_b[0]->two_thr_im;
+        $two_thr_rn = $student_b[0]->two_thr_rn;
+        $two_thr_r3 = $student_b[0]->two_thr_r3;
+
+        $two_four_e = $student_b[0]->two_four_e;
+        $two_four_i3 = $student_b[0]->two_four_i3;
+        $two_four_rx	 = $student_b[0]->two_four_rx;
+        $two_four_r3rn	 = $student_b[0]->two_four_r3rn;
+        $two_four_r4	 = $student_b[0]->two_four_r4;
+        $two_four_rx2	 = $student_b[0]->two_four_rx2;
+
+        $thir_one_one	 = $student_b[0]->thir_one_one;
+        $thir_one_two	 = $student_b[0]->thir_one_two;
+        $thir_one_three	 = $student_b[0]->thir_one_three;
+        $thir_one_four	 = $student_b[0]->thir_one_four;
+        $thr_thr_ds	 = $student_b[0]->thr_thr_ds;
+        $thir_two_one = $student_b[0]->thir_two_one;
+        $thir_two_two = $student_b[0]->thir_two_two;
+
+
+
 
 
         $res = view('wanyongbiao', [
@@ -410,50 +317,42 @@ class WanyongbiaoController extends Controller
 
             'one_ig' => $one_ig,
             'one_rg' => $one_rg,
-            'one_e' => sprintf("%.1f",$one_e),
+            'one_e' => $one_e,
 
             'two_one_rg' => $two_one_rg,
-            'two_one_ig' => sprintf("%.1f",$two_one_ig),
+            'two_one_ig' => $two_one_ig,
             'two_one_im' => $two_one_im,
+            'two_one_r1' => $two_one_r1,
+            'two_one_lx' => $two_one_lx,
+            'two_one_rn' => $two_one_rn,
+            'two_one_im2' => $two_one_im2,
 
-            'two_one_r1' => sprintf("%.1f",$two_one_r1),
-            'two_two_rn' => $two_two_rn,
+            'two_two_vm' => $two_two_vm,
             'two_two_im' => $two_two_im,
+            'two_two_rn' => $two_two_rn,
+            'two_two_r2' => $two_two_r2,
+            'two_two_vx' => $two_two_vx,
 
-            'two_two_vm' =>  $two_two_vm,
-            'two_two_im2' => $two_two_im2,
-            'two_two_rn2' => $two_two_rn2,
-            'two_two_r2' =>  $two_two_r2,
-
-            'two_thr_e' => sprintf("%.1f",$two_thr_e),
-            'two_thr_im2' => $two_thr_im2,
+            'two_thr_e' => $two_thr_e,
+            'two_thr_im' => $two_thr_im,
             'two_thr_rn' => $two_thr_rn,
-            'two_thr_r42' => $two_thr_r42,
-            'two_four_e' => sprintf("%.1f",$two_four_e),
+            'two_thr_r3' => $two_thr_r3,
+
+            'two_four_e' => $two_four_e,
+            'two_four_i3' => $two_four_i3,
+            'two_four_rx' => $two_four_rx,
+            'two_four_r3rn' => $two_four_r3rn,
             'two_four_r4' => $two_four_r4,
-            'two_four_rn4'=> $two_four_rn4,
-            'two_four_r3' => $two_four_r3,
-            'thr_one_r1'  => sprintf("%.1f",$thr_one_r1),
-            'thr_one_ix' =>  sprintf("%.2f",$thr_one_ix),
-            'thr_one_ds'  => sprintf("%.2f",$thr_one_ds),
-            'thr_two_r2' =>  $thr_two_r2,
-            'thr_two_vx' => sprintf("%.2f",$thr_two_vx),
-            'thr_two_ds' => sprintf("%.2f",$thr_two_ds),
-            'thr_thr_r4' => sprintf("%.1f",$thr_thr_r4),
-            'thr_thr_r3' => sprintf("%.1f",$thr_thr_r3),
-            'thr_thr_rx' => sprintf("%.2f",$thr_thr_rx),
-            'thr_thr_ds' => sprintf("%.2f",$thr_thr_ds),
-            'four_one_r1' => sprintf("%.1f",$four_one_r1),
-            'four_one_r2' => $four_one_r2,
-            'four_one_r3' => $four_one_r3,
-            'four_one_r4' => sprintf("%.1f",$four_one_r4),
-            'four_one_ix' => sprintf("%.1f",$four_one_ix),
-            'four_two_1' => $four_two_1,
-            'four_two_2' => $four_two_2,
-            'four_two_3' => $four_two_3,
-            'four_two_4' => $four_two_4,
-            'four_two_5' => $four_two_5,
-            'created_at' => $created_at,
+            'two_four_rx2' => $two_four_rx2,
+
+
+            'thir_one_one' => $thir_one_one,
+            'thir_one_two' => $thir_one_two,
+            'thir_one_three' => $thir_one_three,
+            'thir_one_four' => $thir_one_four,
+            'thir_two_one' => $thir_two_one,
+            'thir_two_two' => $thir_two_two,
+           'created_at' => $created_at,
             'updated_at' => $updated_at,
 
         ]);
@@ -469,4 +368,6 @@ class WanyongbiaoController extends Controller
 
         exit;
     }
+
+
 }
