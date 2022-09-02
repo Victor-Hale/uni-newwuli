@@ -77,7 +77,7 @@ class DiangaiController extends Controller
         $grade = $student_b[0]->grade;
         $grade_xp = $student_b[0]->grade_xp;
         //传入view
-        $res = view('dianbiao'
+        $res = view('dianBiaoGaiZhuang'
             , [
                 'student_level' => $student_level,
                 'student_spec' => $student_spec,
