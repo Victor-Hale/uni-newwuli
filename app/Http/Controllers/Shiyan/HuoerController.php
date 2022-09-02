@@ -826,6 +826,8 @@ public function pdf(Request $request)
     $student_teacher = $student_b[0]->student_teacher;
     $grade = $student_b[0]->grade;
     $grade_xp = $student_b[0]->grade_xp;
+    $created_at = $student_b[0]->created_at;
+    $updated_at = $student_b[0]->updated_at;
 
 
 
@@ -840,6 +842,8 @@ public function pdf(Request $request)
         'grade' => $grade,
         'grade_xp' => $grade_xp,
         'grade_tk' => ($grade - $grade_xp),
+        'created_at' => $created_at,
+        'updated_at' => $updated_at,
 
 
 
