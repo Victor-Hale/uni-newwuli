@@ -293,7 +293,7 @@ class WanyongbiaoController extends Controller
         $thir_one_two	 = $student_b[0]->thir_one_two;
         $thir_one_three	 = $student_b[0]->thir_one_three;
         $thir_one_four	 = $student_b[0]->thir_one_four;
-        $thr_thr_ds	 = $student_b[0]->thr_thr_ds;
+
         $thir_two_one = $student_b[0]->thir_two_one;
         $thir_two_two = $student_b[0]->thir_two_two;
 
@@ -302,7 +302,7 @@ class WanyongbiaoController extends Controller
 
 
         $res = view('wanyongbiao', [
-            'name' => $student_name,
+            'student_name' => $student_name,
             'student_level' => $student_level,
             'student_spec' => $student_spec,
             'student_year' => $student_year,

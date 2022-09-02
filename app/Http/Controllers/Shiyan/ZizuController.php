@@ -349,7 +349,7 @@ class ZizuController extends Controller
 
 
         $res = view('ZiZhuShi', [
-            'name' => $student_name,
+            'student_name' => $student_name,
             'student_level' => $student_level,
             'student_spec' => $student_spec,
             'student_year' => $student_year,

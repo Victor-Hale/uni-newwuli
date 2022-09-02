@@ -165,7 +165,7 @@ class OumuController extends Controller
 
 
         $res = view('oumu', [
-            'name' => $student_name,
+            'student_name' => $student_name,
             'student_level' => $student_level,
             'student_spec' => $student_spec,
             'student_year' => $student_year,
