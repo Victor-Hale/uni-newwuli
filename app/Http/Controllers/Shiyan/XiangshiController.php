@@ -275,7 +275,7 @@ class XiangshiController extends Controller
 
 
         $res = view('xiangShi', [
-            'name' => $student_name,
+            'student_name' => $student_name,
             'student_level' => $student_level,
             'student_spec' => $student_spec,
             'student_year' => $student_year,
